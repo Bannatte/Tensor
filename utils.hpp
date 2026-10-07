@@ -17,3 +17,13 @@ int dot_product(
   const Vector4Int& a,
   const Vector4Int& b
 );
+
+Vector4Int get_row(
+  const Matrix4Int& A,
+  int r
+);
+
+Vector4Int get_col(
+  const Matrix4Int& A,
+  int c
+);
