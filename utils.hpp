@@ -12,3 +12,8 @@ Matrix4Int matrix_subtraction(
   const Matrix4Int& A,
   const Matrix4Int& B
 );
+
+int dot_product(
+  const Vector4Int& a,
+  const Vector4Int& b
+);
