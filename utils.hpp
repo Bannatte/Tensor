@@ -32,3 +32,9 @@ Matrix4Int matrix_multiplacation(
   const Matrix4Int& A,
   const Matrix4Int& B
 );
+
+Matrix4Int sub_matrix(
+  const Matrix4Int& A,
+  int r,
+  int c
+);
