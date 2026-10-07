@@ -69,7 +69,7 @@ Matrix4Int matrix_multiplacation(const Matrix4Int& A, const Matrix4Int& B) // A 
   return C;
 }
 
-Matrix4Int sub_matrix(const Matrix4Int& A, int r, int c)
+Matrix4Int _sub_matrix(const Matrix4Int& A, int r, int c)
 {
   Matrix4Int result;
   int index = 0;
@@ -81,6 +81,29 @@ Matrix4Int sub_matrix(const Matrix4Int& A, int r, int c)
 
     result.data[index] = A.data[i];
     index++;
+  }
+
+  return result;
+}
+
+bool 
+
+int det(const Matrix4Int& A)
+{
+
+  if 
+  
+  int result = 0;
+  
+  for (int pivot0; pivot0 < 4; pivot0++) {
+    Matrix4Int sub_matrix = _sub_matrix(A, 0, pivot0);
+    
+    int sub_sum = A.data[pivot0] * det(_sub_matrix);
+    if (pivot % 2 != 0) {
+      sub_sum *= -1;
+    }
+
+    result += sub_sum;
   }
 
   return result;
