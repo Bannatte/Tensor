@@ -27,3 +27,8 @@ Vector4Int get_col(
   const Matrix4Int& A,
   int c
 );
+
+Matrix4Int matrix_multiplacation(
+  const Matrix4Int& A,
+  const Matrix4Int& B
+);
