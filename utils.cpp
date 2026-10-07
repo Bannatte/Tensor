@@ -68,3 +68,20 @@ Matrix4Int matrix_multiplacation(const Matrix4Int& A, const Matrix4Int& B) // A 
 
   return C;
 }
+
+Matrix4Int sub_matrix(const Matrix4Int& A, int r, int c)
+{
+  Matrix4Int result;
+  int index = 0;
+  
+  for (int i = 0; i < 16; i++) {
+    if ((i / 4 == r) || (i % 4 == c)) {
+      continue;
+    }
+
+    result.data[index] = A.data[i];
+    index++;
+  }
+
+  return result;
+}
