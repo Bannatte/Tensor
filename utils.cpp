@@ -86,25 +86,38 @@ Matrix4Int _sub_matrix(const Matrix4Int& A, int r, int c)
   return result;
 }
 
-bool 
-
 int det(const Matrix4Int& A)
 {
+    const int a = A.data[0];
+    const int b = A.data[1];
+    const int c = A.data[2];
+    const int d = A.data[3];
 
-  if 
-  
-  int result = 0;
-  
-  for (int pivot0; pivot0 < 4; pivot0++) {
-    Matrix4Int sub_matrix = _sub_matrix(A, 0, pivot0);
-    
-    int sub_sum = A.data[pivot0] * det(_sub_matrix);
-    if (pivot % 2 != 0) {
-      sub_sum *= -1;
-    }
+    const int e = A.data[4];
+    const int f = A.data[5];
+    const int g = A.data[6];
+    const int h = A.data[7];
 
-    result += sub_sum;
-  }
+    const int i = A.data[8];
+    const int j = A.data[9];
+    const int k = A.data[10];
+    const int l = A.data[11];
 
-  return result;
+    const int m = A.data[12];
+    const int n = A.data[13];
+    const int o = A.data[14];
+    const int p = A.data[15];
+
+    const int kp_lo = k * p - l * o;
+    const int jp_ln = j * p - l * n;
+    const int jo_kn = j * o - k * n;
+
+    const int ip_lm = i * p - l * m;
+    const int io_km = i * o - k * m;
+    const int in_jm = i * n - j * m;
+
+    return a * (f * kp_lo - g * jp_ln + h * jo_kn)
+         - b * (e * kp_lo - g * ip_lm + h * io_km)
+         + c * (e * jp_ln - f * ip_lm + h * in_jm)
+         - d * (e * jo_kn - f * io_km + g * in_jm);
 }
