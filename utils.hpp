@@ -33,8 +33,12 @@ Matrix4Int matrix_multiplacation(
   const Matrix4Int& B
 );
 
-Matrix4Int sub_matrix(
+Matrix4Int _sub_matrix(
   const Matrix4Int& A,
   int r,
   int c
+);
+
+int det(
+  const Matrix4Int& A
 );
